@@ -82,5 +82,4 @@ void driverSingleResponsibility() {
     dbgVec(myDiary->getEntry(2));
     Persistent<Journal> storeJournal(*myDiary, "myDiary.txt");
     delete myDiary;
-    Persistent<Journal> storeJournal2(*myDiary, "myDiary2.txt"); 
 }
