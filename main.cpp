@@ -23,18 +23,6 @@ int main() {
      *          closed for any changes in the base class. Instead derive
      *          something out of what is already there and scale it.
      */
-    Journal *myDiary = new Journal("myDiary");
-    myDiary->addEntry("I have started studying design");
-    myDiary->addEntry("I looked for textbooks, but they are all expensive");
-    myDiary->addEntry("I found an Udemy course and I am trying to follow it for a while to save money");
-    myDiary->addEntry("However, I find the C++ in the course as very advanced");
-    myDiary->addEntry("I think I will need a lot of ramp up time to catch up to the instructor");
-    myDiary->displayEntries();
-    //  Get a particular entry
-    dbgVec(myDiary->getEntry(10));
-    dbgVec(myDiary->getEntry(2));
-    Persistent<Journal> storeJournal(*myDiary, "myDiary.txt");
-    delete myDiary;
-    Persistent<Journal> storeJournal2(*myDiary, "myDiary2.txt");
+    driverSingleResponsibility();
     return 0;
 }

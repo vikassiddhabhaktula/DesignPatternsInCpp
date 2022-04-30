@@ -3,6 +3,7 @@ using namespace std;
 #include <string>
 #include <fstream>
 #include "single_responsibility.h"
+#include "printer.h"
 
 //  Adds an entry in the journal object
 void Journal::addEntry(string text) {
@@ -51,7 +52,7 @@ Journal::~Journal() {
 
 //  Persistent storage part: constructor override for Journal class
 template<>
-Persistent<Journal>::Persistent(const Journal& journal, const string& filepath, const e_mode& mode) {
+Persistent<Journal>::Persistent(const Journal& journal, const string& filepath, const enumFileMode& mode) {
     fstream file;
     uint32_t numEntries;
     //  Open the file for whatever
@@ -65,4 +66,21 @@ Persistent<Journal>::Persistent(const Journal& journal, const string& filepath, 
     }
     //  Close the file
     file.close();
+}
+
+//  Driver code to run the test examples
+void driverSingleResponsibility() {
+    Journal *myDiary = new Journal("myDiary");
+    myDiary->addEntry("I have started studying design");
+    myDiary->addEntry("I looked for textbooks, but they are all expensive");
+    myDiary->addEntry("I found an Udemy course and I am trying to follow it for a while to save money");
+    myDiary->addEntry("However, I find the C++ in the course as very advanced");
+    myDiary->addEntry("I think I will need a lot of ramp up time to catch up to the instructor");
+    myDiary->displayEntries();
+    //  Get a particular entry
+    dbgVec(myDiary->getEntry(10));
+    dbgVec(myDiary->getEntry(2));
+    Persistent<Journal> storeJournal(*myDiary, "myDiary.txt");
+    delete myDiary;
+    Persistent<Journal> storeJournal2(*myDiary, "myDiary2.txt"); 
 }
