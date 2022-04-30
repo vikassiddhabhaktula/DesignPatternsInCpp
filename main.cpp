@@ -5,6 +5,7 @@ using namespace std;
 // header includes
 #include "printer.h"
 #include "single_responsibility.h"
+#include "open-closed.h"
 
 int main() {
     cout << "=======================\n";
@@ -21,8 +22,11 @@ int main() {
      *  2.  Open but closed:
      *      -   Make sure that the class we create is open for scaling but
      *          closed for any changes in the base class. Instead derive
-     *          something out of what is already there and scale it.
+     *          something out of what is already there and scale it. Use of
+     *          specifications as a product filter instead of changing the
+     *          product filter itself.
      */
     driverSingleResponsibility();
+    driverOpenClosed();
     return 0;
 }
