@@ -6,6 +6,7 @@ using namespace std;
 #include "printer.h"
 #include "single_responsibility.h"
 #include "open-closed.h"
+#include "interface_segregation.h"
 
 int main() {
     cout << "=======================\n";
@@ -25,8 +26,19 @@ int main() {
      *          something out of what is already there and scale it. Use of
      *          specifications as a product filter instead of changing the
      *          product filter itself.
+     *  3.  Liskov subsitution:
+     *      -   The idea is the places where base class is used should be
+     *          easily replaced with derived class reference, and there
+     *          shouldn't be any break in functionality. TODO: square derived
+     *          from rectangle.
+     *  4.  Interface segregation:
+     *      -   Always make sure the interfaces exposed for implementation
+     *          are not too big. It will be easier to maintain and also to
+     *          code and then stich together smaller interfaces to form the
+     *          design.
      */
     driverSingleResponsibility();
     driverOpenClosed();
+    driverInterfaceSegregation();
     return 0;
 }
