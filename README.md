@@ -1,2 +1,3 @@
 # DesignPatternsInCpp
-Design Patterns
+Design Patterns:
+-   Single responsibility design code added
