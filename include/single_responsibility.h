@@ -21,17 +21,16 @@ class Journal {
         ~Journal();
 };
 
-enum class enumFileMode {RD, WR, APP, RD_WR};
+enum class FileMode {RD, WR, APP, RD_WR};
+static unordered_map<FileMode, const ios_base::openmode> mapMode = {
+        {FileMode::RD, ios::in}, {FileMode::WR, ios::out},
+        {FileMode::APP, ios::app}, {FileMode::RD_WR, ios::in | ios::out}};
 
 //  Class to save the content to storage
 template<typename T>
 class Persistent {
-    unordered_map<enumFileMode, ios_base::openmode> mapMode = {
-            {enumFileMode::RD, ios::in}, {enumFileMode::WR, ios::out},
-            {enumFileMode::APP, ios::app}, {enumFileMode::RD_WR, ios::in | ios::out}};
-
     public:
-        Persistent(const T& obj, const string& filePath, const enumFileMode& mode = enumFileMode::WR);
+        Persistent(const T& obj, const string& filePath, const FileMode& mode = FileMode::WR);
 };
 
 void driverSingleResponsibility();

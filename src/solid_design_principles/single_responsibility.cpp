@@ -52,7 +52,7 @@ Journal::~Journal() {
 
 //  Persistent storage part: constructor override for Journal class
 template<>
-Persistent<Journal>::Persistent(const Journal& journal, const string& filepath, const enumFileMode& mode) {
+Persistent<Journal>::Persistent(const Journal& journal, const string& filepath, const FileMode& mode) {
     fstream file;
     uint32_t numEntries;
     //  Open the file for whatever
