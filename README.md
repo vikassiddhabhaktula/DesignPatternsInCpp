@@ -11,3 +11,8 @@ Design Patterns:
     -   Make sure the interfaces are segreagated.
     -   And are small and concise
     -   This makes the development & maintenance easy
+-   Dependency Inversion:
+    -   Make sure high level modules are not dependent on low level modules
+        directly
+    -   Instead, create interfaces and only expose interfaces to the High level
+    -   This way, even an implementation change in LL will not break HL

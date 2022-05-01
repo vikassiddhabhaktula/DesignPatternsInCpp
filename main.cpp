@@ -7,6 +7,7 @@ using namespace std;
 #include "single_responsibility.h"
 #include "open-closed.h"
 #include "interface_segregation.h"
+#include "dependency_inversion.h"
 
 int main() {
     cout << "=======================\n";
@@ -36,9 +37,19 @@ int main() {
      *          are not too big. It will be easier to maintain and also to
      *          code and then stich together smaller interfaces to form the
      *          design.
+     *  5.  Dependency inversion concept:
+     *      -   When there are high level modules and low level modules in
+     *          the design, make sure that the high level modules don't
+     *          depend on low level modules directly. Instead, they should
+     *          depend on interfaces, so that any future implementation
+     *          changes in the low level module will not impact the high level
+     *          modules. Use an interface and the definition in the low level
+     *          design. And then use the magic of polymorphism to get a hold
+     *          of that interface function in the high level module.
      */
     driverSingleResponsibility();
     driverOpenClosed();
     driverInterfaceSegregation();
+    driverDependencyInversion();
     return 0;
 }
