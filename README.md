@@ -1,6 +1,6 @@
 # DesignPatternsInCpp
 Design Patterns:
-Solid Design Patterns:
+-   Solid Design Patterns:
     -   Single responsibility:
         -   Make sure a class has only single concern/ responsibility addressed
     -   Open-Closed design:
@@ -18,7 +18,7 @@ Solid Design Patterns:
             directly
         -   Instead, create interfaces and only expose interfaces to the High level
         -   This way, even an implementation change in LL will not break HL
-Creational Design Patterns:
+-   Creational Design Patterns:
     -   Factory:
         -   We use factory class to create constructors for the main Product class
         -   That way, factory class can create any object just by choosing the right constructing function
