@@ -8,6 +8,7 @@ using namespace std;
 #include "open-closed.h"
 #include "interface_segregation.h"
 #include "dependency_inversion.h"
+#include "factory.h"
 
 int main() {
     cout << "=======================\n";
@@ -51,5 +52,16 @@ int main() {
     driverOpenClosed();
     driverInterfaceSegregation();
     driverDependencyInversion();
+    /*
+     *  Creational design patterns:
+     *  1.  Factory:
+     *      -   When the creation involves more forms i.e. we have to create a
+     *          constructor with the same signature, then we cannot do that in
+     *          Cpp. So, we form a factory class which helps in creating the
+     *          actuall class. We use the factory to create products of the
+     *          intended class. There are various methods: factory, internal
+     *          factory, abstract factory etc.,
+     */
+    driverFactory();
     return 0;
 }
