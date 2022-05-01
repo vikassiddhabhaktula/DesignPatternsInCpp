@@ -80,7 +80,7 @@ void ProductPrintSpec::printFun(Product *item) const {
 void driverOpenClosed() {
     //  Introduce print spec
     ProductPrintSpec prodPrintSpec;
-    Printer<ProductPrintSpec, Product> printer(prodPrintSpec);
+    Printer<ProductPrintSpec, Product *> printer(prodPrintSpec);
     vector<Product *> prods = {
         new Product("bat", Color::blue, Size::small),
         new Product("mat", Color::green, Size::big),

@@ -33,7 +33,7 @@ void dbgVal(const T& args, const string& label = "") {
 template <typename T>
 class PrintSpec {
     public:
-        virtual void printFun(T *item) const = 0;
+        virtual void printFun(T item) const = 0;
 };
 
 //  Printer class to print objects: K is the spec, T is the data type
@@ -44,7 +44,7 @@ class Printer {
     K _spec;
     public:
         Printer(const K& spec) : _spec(spec) {};
-        void print(const vector<T *>& allItems, const string& label = "") {
+        void print(const vector<T>& allItems, const string& label = "") {
             if ("" != label) {
                 cout << label << ":\n";
             }

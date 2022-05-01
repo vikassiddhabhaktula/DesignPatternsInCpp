@@ -52,7 +52,7 @@ class SizeSpec: public FilterSpec<T> {
 };
 
 //  Product print spec
-class ProductPrintSpec : public PrintSpec<Product> {
+class ProductPrintSpec : public PrintSpec<Product *> {
     public:
         ProductPrintSpec();
         void printFun(Product *item) const;
