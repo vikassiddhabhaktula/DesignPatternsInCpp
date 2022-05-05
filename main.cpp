@@ -9,6 +9,7 @@ using namespace std;
 #include "interface_segregation.h"
 #include "dependency_inversion.h"
 #include "factory.h"
+#include "prototype.h"
 
 int main() {
     cout << "=======================\n";
@@ -61,7 +62,14 @@ int main() {
      *          actuall class. We use the factory to create products of the
      *          intended class. There are various methods: factory, internal
      *          factory, abstract factory etc.,
+     *  2.  Prototype:
+     *      -   Let's say there is a need to create objects from a standard
+     *          prototype and then we need to customize those objects, we then
+     *          use a prototype design pattern. We create a prototype and expose
+     *          that using a factory. And use only that to create the objects
+     *          and later modify them.
      */
     driverFactory();
+    driverPrototypePattern();
     return 0;
 }

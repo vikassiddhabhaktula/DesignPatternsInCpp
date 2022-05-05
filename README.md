@@ -23,3 +23,5 @@ Design Patterns:
     -   Factory:
         -   We use factory class to create constructors for the main Product class
         -   That way, factory class can create any object just by choosing the right constructing function
+    -   Prototype:
+        -   Used to construct objects from a prototype and then customize those objects based on need
