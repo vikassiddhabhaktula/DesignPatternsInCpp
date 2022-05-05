@@ -19,6 +19,7 @@ Design Patterns:
         -   Instead, create interfaces and only expose interfaces to the High level
         -   This way, even an implementation change in LL will not break HL
 -   Creational Design Patterns:
+    -   Builder: TODO
     -   Factory:
         -   We use factory class to create constructors for the main Product class
         -   That way, factory class can create any object just by choosing the right constructing function
